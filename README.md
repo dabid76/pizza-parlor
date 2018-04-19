@@ -48,6 +48,7 @@ This page **should not** appear in the navigation bar. Eventually the client wou
 
 ## STRETCH GOALS
 
+- Create a new route that allows admins to add pizzas [http://localhost:3000/admin](http://localhost:3000/admin).
 - Improve the stying of the app using Material-UI cards, buttons, nav bar and icons.
 - Create a junction table and keep track of which pizzas are added to each order.
 - Display a list of pizzas for each order on the orders page. 
