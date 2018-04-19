@@ -31,7 +31,7 @@ Display all of the pizzas on the screen. Allow users to increase or decrease the
 
 ### CHECKOUT
 
-Include an input field for the users name and display a table of pizzas they have added to the cart. Users should not be able to modify item totals on this screen. When they click checkout, the users name and order total should be sent to the server and saved in the database.
+Include an input field for the users name and display a table of pizzas they have added to the cart. Users should not be able to modify item totals on this screen. When they click checkout, the users *name* and *order total* should be sent to the server and saved in the database.
 
 > NOTE: **As a stretch goal**, add a junction table and save each pizza that has been added to the order. 
 
