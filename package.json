@@ -16,7 +16,7 @@
   "scripts": {
     "start": "react-scripts build && node server/server.js",
     "client": "react-scripts start",
-    "server": "node server/server.js",
+    "server": "nodemon --watch server server/server.js",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
   }
