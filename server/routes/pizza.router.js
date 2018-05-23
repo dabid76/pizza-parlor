@@ -12,6 +12,12 @@ const PizzaSchema = new Schema({
     cost: { type: Number, required: true }
 });
 
+PizzaSchema.virtual('pizza_order', {
+    ref: 'Orders',
+    localField: '_id',
+    foreignField: 'pizzas._id'
+});
+
 const Pizza = mongoose.model('Pizza', PizzaSchema);
 
 router.get('/', (req, res) => {

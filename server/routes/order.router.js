@@ -12,10 +12,13 @@ const OrderSchema = new Schema({
         zip: { type: Number }
     },
     pizzas: [{ 
-        _id: false,
-        pizza: { type: Schema.ObjectId, ref: 'Pizza' }, // links to the Pizza schema
+        _id: { type: Schema.ObjectId, ref: 'Pizza' }, // links to the Pizza schema
+        name: { type: String, required: true },
+        description: { type: String, required: true },
+        cost: { type: Number, required: true },
         quantity: { type: Number, default: 1 }
     }],
+    time: { type: Date, default: Date.now }, // Defaults to the current time
     order_total: { type: Number, required: true },
     type: { type: String } // pickup or delivery
 });
@@ -27,7 +30,7 @@ const Orders = mongoose.model('Orders', OrderSchema);
 router.get('/', (req, res) => {
     console.log('GET /order');
     // populate will 'join' the pizzas in the order with the Pizza collection
-    Orders.find({}).populate('pizzas.pizza_id').then((result) => {
+    Orders.find({}).then((result) => {
         res.send(result);
     }).catch((error) => {
         console.log('Error GET /order', error);

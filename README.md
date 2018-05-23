@@ -50,12 +50,19 @@ After starting up the server, the following routes should be available. You can 
         zip: 55408
     },
     pizzas: [{ 
-        pizza: "5afc94b8c62836fadd80496c" // _id of pizza, yours will be different!
+        _id: "5afc94b8c62836fadd80496c" // _id of pizza, yours will be different!
+        name: "Pepperoni",
+        description: "Classic pizza with cheese and pepperoni. Baked with a traditional crust in our brick oven.",
+        cost: "14.99"
     },
     { 
-        pizza: "5afc94f3c62836fadd804979"  // _id of pizza, yours will be different!
+        _id: "5afc94f3c62836fadd804979"  // _id of pizza, yours will be different!
+        name: "Splat of Marinara",
+        description: "Cheeseless pizza with marinara, garlic and red peppers.",
+        cost: "12.99"
     }],
-    order_total: 25.98
+    order_total: 27.98,
+    type: "Pickup"
 }
 ```
 
