@@ -4,13 +4,17 @@ Before you get started make sure to read through **ALL** requirements and outlin
 
 ### Setup
 
-Server side code for baseline functionality has been provided for you. Each member of your team will need to import the list of pizzas into your Mongo Database. Make sure mongo is running, open the project folder in terminal and run the following command:
+Server side code for baseline functionality has been provided for you. Each member of your team will need to import the list of pizzas into your Mongo Database. Make sure mongo is running `mongod`, open this project folder in terminal and run the following command:
+
+**Import data**
 
 ```
 mongoimport --db pizza_parlor --collection pizzas --file pizza.csv --type csv --headerline
 ```
 
-Remember, Mongo creates the database and collections automatically! There is no need to do any additional database work after importing the pizzas.
+Remember, Mongo creates the database and collections automatically! There is no need to do any additional database work after importing the pizzas. Use `cmd` + `r` in Robo 3T to refresh your list of databases. `pizza_parlor` should now appear in that list.
+
+**Start your server**
 
 ```
 npm install
@@ -18,6 +22,8 @@ npm run server
 ```
 
 Now that the server is running, open a new terminal tab with `cmd + t` and start the react client app.
+
+**Start your client**
 
 ```
 npm run client

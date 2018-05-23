@@ -28,35 +28,37 @@ const Orders = mongoose.model('Orders', OrderSchema);
 
 // GET all orders that have been placed, populate with data from the pizza collection
 router.get('/', (req, res) => {
-    console.log('GET /order');
-    // populate will 'join' the pizzas in the order with the Pizza collection
+    console.log('GET /api/order');
+    // Find all orders and return them
     Orders.find({}).then((result) => {
         res.send(result);
     }).catch((error) => {
-        console.log('Error GET /order', error);
+        console.log('Error GET /api/order', error);
         res.sendStatus(500);  
     });
 })
 
 // POST a new order
 router.post('/', (req, res) => {
-    console.log('POST /order', req.body);
+    console.log('POST /api/order', req.body);
     const pizzaOrder = req.body;
+    // pizzaOrder should match the OrderSchema format
     const order = new Orders(pizzaOrder);
     order.save().then((result) => {
         res.sendStatus(201);
     }).catch((error) => {
-        console.log('Error POST /order', error);
+        console.log('Error POST /api/order', error);
         res.sendStatus(500);
     });
 });
 
 // DELETE an order
 router.delete('/:id', (req, res) => {
+    console.log('DELETE /api/order', req.params.id);
     Orders.findByIdAndRemove({_id: req.params.id}).then((result) => {
         res.sendStatus(200);
     }).catch((error) => {
-        console.log('Error DELETE /order', error);
+        console.log('Error DELETE /api/order', error);
         res.sendStatus(500);
     })
 });

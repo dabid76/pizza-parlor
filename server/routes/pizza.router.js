@@ -9,25 +9,20 @@ const Schema = mongoose.Schema;
 const PizzaSchema = new Schema({
     name: { type: String, required: true },
     description: { type: String, required: true },
-    cost: { type: Number, required: true }
-});
-
-PizzaSchema.virtual('pizza_order', {
-    ref: 'Orders',
-    localField: '_id',
-    foreignField: 'pizzas._id'
+    cost: { type: Number, required: true },
+    image_path: { type: String, required: true }
 });
 
 const Pizza = mongoose.model('Pizza', PizzaSchema);
 
 router.get('/', (req, res) => {
+    console.log('GET /api/pizza');
     Pizza.find({}).then((result) => {
         res.send(result);
     }).catch((error) => {
-        console.log('Error GET /pizza', error)
+        console.log('Error GET /api/pizza', error)
         res.sendStatus(500);
     });
-
 })
 
 module.exports = router;

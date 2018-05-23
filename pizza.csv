@@ -1,7 +1,7 @@
-name,description,cost
-Splat of Marinara,"Cheeseless pizza with marinara, garlic and red peppers.",12.99
-Onamonapizza,"Cheese, BBQ sauce and artichokes.",14.99
-Pepperoni,"Classic pizza with cheese and pepperoni. Baked with a traditional crust in our brick oven.",14.99
-Over the Rainbow,"One ingredient of each color: pepperoni, doritos, pineapple, olives, cheese, peppers and onion.",19.99
-Chinese Firedragon,"Pepperoni, pineapple and banana peppers.",15.99
-Bad Date,"Garlic, Onion and Pepperoni.",24.99
+name,description,cost,image_path
+Splat of Marinara,"Cheeseless pizza with marinara, garlic and red peppers.",12.99,"images/pizza_photo.png"
+Onamonapizza,"Cheese, BBQ sauce and artichokes.",14.99,"images/pizza_photo.png"
+Pepperoni,"Classic pizza with cheese and pepperoni. Baked with a traditional crust in our brick oven.",14.99,"images/pizza_photo.png"
+Over the Rainbow,"One ingredient of each color: pepperoni, doritos, pineapple, olives, cheese, peppers and onion.",19.99,"images/pizza_photo.png"
+Chinese Firedragon,"Pepperoni, pineapple and banana peppers.",15.99,"images/pizza_photo.png"
+Bad Date,"Garlic, Onion and Pepperoni.",24.99,"images/pizza_photo.png"
