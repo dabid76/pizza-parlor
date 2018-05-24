@@ -112,7 +112,7 @@ This page **should not** appear in the navigation bar. Eventually the client wou
 
 ## STRETCH GOALS
 
-- Improve the stying of the app using Material-UI cards, buttons, nav bar and icons.
+- Improve the styling of the app using Material-UI cards, buttons, nav bar and icons.
 - Allow the user to go back to previous pages (until they've completed checkout).
 - Display a list of pizzas for each order on the orders page. 
 - Add a button on the orders page to track delivery status.
