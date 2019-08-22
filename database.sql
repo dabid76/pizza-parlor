@@ -3,7 +3,8 @@ CREATE TABLE "pizza" (
 	"name" VARCHAR(100) NOT NULL,
 	"description" VARCHAR(1000) NOT NULL,
 	"price" NUMERIC (20, 2) NOT NULL,
-	"image_path" VARCHAR(1000) NOT NULL
+	"image_path" VARCHAR(1000) NOT NULL,
+	"new" BOOLEAN
 );
 
 INSERT INTO "pizza" ("name", "description", "price", "image_path")
