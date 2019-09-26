@@ -3,6 +3,16 @@ import axios from 'axios';
 import './App.css';
 
 class App extends Component {
+
+  componentDidMount = () => {
+    this.getPizza();
+  }
+  getPizza = () => {
+    axios.get('/api/pizza')
+    .then(response => {
+      console.log(response.data)
+    })
+  }
   render() {
     return (
       <div className="App">
