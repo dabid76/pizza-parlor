@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 
-class PizzaList extends Component {
+class OrderForm extends Component {
     render() {
         return (
             <>
@@ -10,5 +10,4 @@ class PizzaList extends Component {
     }
 }
 
-export default PizzaList;
- 
+export default OrderForm;
