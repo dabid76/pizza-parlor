@@ -2,6 +2,21 @@
   text-align: center;
 }
 
+.pizza-list {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.pizza-item {
+  display: flex;
+  width: 250px;
+  flex-direction: column;
+  border: 2px solid black;
+  padding: 5px;
+  margin-top: 10px;
+}
+
 .App-header {
   background-color: #222;
   height: 70px;
