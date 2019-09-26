@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
-import connect from 'react-redux'
+import {connect} from 'react-redux'
 
 class CheckoutTable extends Component {
 
