@@ -17,6 +17,14 @@
   margin-top: 10px;
 }
 
+.nextBtn {
+  width: 100px;
+  height: 50px;
+  padding: 5px;
+  margin: 10px;
+  float: right;
+}
+
 .App-header {
   background-color: #222;
   height: 70px;
