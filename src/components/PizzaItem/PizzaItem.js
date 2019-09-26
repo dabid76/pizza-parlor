@@ -11,9 +11,11 @@ class PizzaItem extends Component {
                 <div className="pizza-image">
                         <img width="150px" src={this.props.pizza.image_path}></img>
                     </div>
-                    <div className="pizza-name"><h3>{this.props.pizza.name}</h3></div>
-                    <div className="pizza-desc">{this.props.pizza.description}</div>
-                    <div className="pizza-cost"><br></br>{this.props.pizza.price}</div>
+                    <div className="pizza-info"><div className="pizza-description"><h3>{this.props.pizza.name}</h3>
+                        <br></br>{this.props.pizza.description}</div>
+                    <br></br>
+                        <div className="pizza-price">{this.props.pizza.price}</div>
+                    </div>
             </div>
             </>
         )
