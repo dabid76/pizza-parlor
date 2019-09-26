@@ -1,13 +1,18 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { connect } from 'react-redux';
+import PizzaItem from '../PizzaItem/PizzaItem'
+import '../App/App.css'
 
 class PizzaList extends Component {
     render() {
         return (
             <>
-                {props.reduxStore.bookList.map((book, index) =>
-                    <li key={index}>{book.title} by {book.author}</li>
+            <div className="pizza-list">
+                {this.props.reduxStore.pizzaReducer.map((pizzaItem) => 
+                    <PizzaItem pizza={pizzaItem}/>
                 )}
+            </div>
             </>
         );
     }
