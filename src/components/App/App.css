@@ -31,6 +31,20 @@
 .App-intro {
   font-size: large;
 }
+.customer-info-inputs input,
+.customer-info-select input{
+  margin: 10px;
+}
+
+.customer-info-select{
+  text-align: left;
+}
+
+.order-form-flex{
+  display: flex;
+  justify-content: space-around;
+  margin: 30px auto;
+}
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
