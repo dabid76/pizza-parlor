@@ -39,4 +39,3 @@ const reduxStore = createStore(
 
 
 ReactDOM.render(<Provider store={reduxStore}><App /></Provider>, document.getElementById('root'));
-
