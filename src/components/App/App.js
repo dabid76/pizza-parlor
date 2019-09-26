@@ -9,6 +9,7 @@ import PizzaList from '../PizzaList/PizzaList';
 // import Checkout from '../Checkout/Checkout';
 // import CheckoutTable from '../CheckoutTable/CheckoutTable';
 // import UserInfo from '../UserInfo/UserInfo';
+import Admin from '../Admin/Admin'
 
 class App extends Component {
 
@@ -30,6 +31,7 @@ class App extends Component {
           <h1 className="App-title">Prime Pizza</h1>
         </header>
         <br/>
+        <Admin/>
       <PizzaList/>
       </div>
     );
