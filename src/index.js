@@ -8,17 +8,32 @@ import logger from 'redux-logger';
 import * as serviceWorker from './serviceWorker';
 
 
-const pizzaList = (state = [], action) => {
+const pizzaReducer = (state = [], action) => {
     // if (action.type === 'LIST_PIZZAS') {
     //     return action.payload
     // }
-    // TODO - set book list with data from server
+    return state;
+}
+
+const orderReducer = (state = [], action) => {
+    // if (action.type === 'ADD_ORDER') {
+    //     return action.payload
+    // }
+    return state;
+}
+
+const lineItemReducer = (state = [], action) => {
+    // if (action.type === 'LIST_ORDERS_ADMIN') {
+    //     return action.payload
+    // }
     return state;
 }
 
 const reduxStore = createStore(
     combineReducers({
-        pizzaList
+        pizzaReducer,
+        orderReducer,
+        lineItemReducer
     }),
     applyMiddleware(logger)
 );
