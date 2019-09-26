@@ -5,6 +5,10 @@ import {connect} from 'react-redux'
 
 class CheckoutTable extends Component {
 
+  state = {
+    orders: [],
+  }
+
   componentDidMount = () => {
     this.getOrders();
   }
@@ -16,7 +20,13 @@ class CheckoutTable extends Component {
   getOrders = () => {
     axios.get('/api/order')
     .then(response => {
-      console.log(response.data)
+      console.log(response.data);
+      console.log(response);
+      this.setState({
+        orders: response.data,
+
+      })
+
     })
   }
 
