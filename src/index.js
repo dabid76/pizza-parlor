@@ -8,9 +8,9 @@ import logger from 'redux-logger';
 
 
 const pizzaReducer = (state = [], action) => {
-    // if (action.type === 'LIST_PIZZAS') {
-    //     return action.payload
-    // }
+    if (action.type === 'LIST_PIZZAS') {
+        return action.payload
+    }
     return state;
 }
 

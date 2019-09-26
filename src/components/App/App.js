@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
 // import Home from '../Home/Home.js';
-// import PizzaList from '../PizzaList/PizzaList';
+import { connect } from 'react-redux';
+import PizzaList from '../PizzaList/PizzaList';
 // import PizzaItem from '../PizzaItem/PizzaItem';
 // import OrderForm from '../OrderForm/OrderForm';
 // import Checkout from '../Checkout/Checkout';
@@ -16,8 +17,10 @@ class App extends Component {
   }
   getPizza = () => {
     axios.get('/api/pizza')
-    .then(response => {
-      console.log(response.data)
+    .then((response) => {
+      this.props.dispatch({type: 'LIST_PIZZAS', payload: response.data})
+    }).catch((error) => {
+      console.log('this is the error:', error)
     })
   }
   render() {
@@ -27,11 +30,10 @@ class App extends Component {
           <h1 className="App-title">Prime Pizza</h1>
         </header>
         <br/>
-        <img src="images/pizza_photo.png"/>
-        <p>Pizza is great.</p>
+      <PizzaList/>
       </div>
     );
   }
 }
 
-export default App;
+export default connect()(App);
