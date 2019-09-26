@@ -6,10 +6,10 @@ class PizzaItem extends Component {
 
     render() {
         return (
-            <div className="App">
-                <header className="App-header">
-                </header>
-            </div>
+
+                    <li>
+                        <button onClick={this.addProductToCart}>Add to Cart</button>
+                    </li>
         )
     }
 }
