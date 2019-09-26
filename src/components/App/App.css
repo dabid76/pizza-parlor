@@ -32,18 +32,18 @@
   font-size: large;
 }
 .customer-info-inputs input,
-.customer-info-select li{
+.customer-info-select input{
   margin: 10px;
 }
 
 .customer-info-select{
-  list-style: none;
   text-align: left;
 }
 
 .order-form-flex{
   display: flex;
   justify-content: space-around;
+  margin: 30px auto;
 }
 
 @keyframes App-logo-spin {

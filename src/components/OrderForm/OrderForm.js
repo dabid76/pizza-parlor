@@ -3,6 +3,16 @@ import axios from 'axios';
 
 class OrderForm extends Component {
 
+    state = {
+        orderToSend: {
+            customer_name: '',
+            street_address: '',
+            city: '',
+            zip: '',
+            type: 'Delivery'
+        }
+    }
+
     postOrders = () => {
         axios.post('/api/order')
             .then(response => {
@@ -11,21 +21,44 @@ class OrderForm extends Component {
                 console.log('error in order form post ', error)
             })
     }
+
+    handleInputChange = (event, propertyName) => {
+        this.setState({
+            orderToSend: {
+                ...this.state.orderToSend,
+                [propertyName]: event.target.value
+            }
+        })
+    }
+    handleRadioInput = (deliveryOrPickup) => {
+        this.setState({
+            orderToSend: {
+                ...this.state.orderToSend,
+                type: deliveryOrPickup
+            }
+        })
+    }
+
+    handleSubmit = () => {
+        console.log(this.state)
+    }
+
     render() {
         return (
             <>
                 <h2>Step 2: Customer Information</h2>
                 <div className="order-form-flex">
                     <div className="customer-info-inputs">
-                        <input placeholder="Name" /><br />
-                        <input placeholder="Street Address" /><br />
-                        <input placeholder="City" /><br />
-                        <input placeholder="Zip" /><br />
+                        <input placeholder="Name" onChange={(event) => this.handleInputChange(event, 'customer_name')}/><br />
+                        <input placeholder="Street Address" onChange={(event) => this.handleInputChange(event, 'street_address')}/><br />
+                        <input placeholder="City" onChange={(event) => this.handleInputChange(event, 'city')}/><br />
+                        <input placeholder="Zip" onChange={(event) => this.handleInputChange(event, 'zip')}/><br />
                     </div>
-                    <ul className="customer-info-select">
-                        <li><input type="radio" />Pickup</li>
-                        <li><input type="radio" defaultChecked />Delivery</li>
-                    </ul>
+                    <form className="customer-info-select">
+                        <input type="radio" name="pizza" value="Pickup" onChange={(event) => this.handleInputChange(event, 'type')} />Pickup<br/>
+                        <input type="radio" name="pizza" value="Delivery" onChange={(event) => this.handleInputChange(event, 'type')} defaultChecked/>Delivery
+                    </form>
+                    <button onClick={this.handleSubmit}>Placeholder Submit</button>
                 </div>
             </>
         );
