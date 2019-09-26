@@ -3,10 +3,18 @@ import {connect} from 'react-redux'
 
 class PizzaItem extends Component {
 
+    state = {
+        pizzaToOrder: {
+            name = '',
+            description = '',
+            price = ''
+        },
+    }
+
     addProductToCart = () => {
         console.log('btn getting click')
         console.log(this.props.product);
-        this.props.dispatch({ type: 'ADD_PRODUCT_TO_CART', payload: this.props.product })        
+        this.props.dispatch({ type: 'ADD_ORDER', payload: this.props.product })        
     }
 
     render() {
