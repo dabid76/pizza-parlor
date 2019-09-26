@@ -20,7 +20,7 @@ class PizzaItem extends Component {
                     <div className="pizza-name"><h3>{this.props.pizza.name}</h3></div>
                     <div className="pizza-desc">{this.props.pizza.description}</div>
                     <div className="pizza-cost"><br></br>{this.props.pizza.price}</div>
-                    <button type="button" onClick={this.addProductToCart}>Add to Cart</button>
+                    <button class="button" onClick={this.addProductToCart}>Add to Cart</button>
             </div>
             </>
         )
