@@ -10,6 +10,16 @@ import CheckoutTable from '../CheckoutTable/CheckoutTable';
 import UserInfo from '../UserInfo/UserInfo';
 
 class App extends Component {
+
+  componentDidMount = () => {
+    this.getPizza();
+  }
+  getPizza = () => {
+    axios.get('/api/pizza')
+    .then(response => {
+      console.log(response.data)
+    })
+  }
   render() {
     return (
       <div className="App">

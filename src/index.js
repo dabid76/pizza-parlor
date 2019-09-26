@@ -39,3 +39,7 @@ const reduxStore = createStore(
 
 
 ReactDOM.render(<Provider store={reduxStore}><App /></Provider>, document.getElementById('root'));
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1dc1a26ae4606c3104109ccf61f379c22c16cbab
