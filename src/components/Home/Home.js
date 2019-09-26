@@ -16,7 +16,7 @@ class App extends Component {
             <div className="App">
                 {/* Displays the current order total */}
                 <PizzaList />
-                <button onClick={this.handleClick} className="nextBtn">Next</button>
+                <button onClick={this.handleClick} className="nextBtn">NEXT</button>
             </div>
         );
     }
