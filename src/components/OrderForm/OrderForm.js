@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import {connect} from 'react-redux'
 
 class OrderForm extends Component {
 
@@ -41,6 +42,7 @@ class OrderForm extends Component {
 
     handleSubmit = () => {
         console.log(this.state)
+        this.props.dispatch({ type: 'ORDER_INFO_CUSTOMER', payload: this.state.orderToSend })
     }
 
     render() {
@@ -64,5 +66,7 @@ class OrderForm extends Component {
         );
     }
 }
-
-export default OrderForm;
+const mapStateToProps = (reduxStore) => ({
+    reduxStore
+})
+export default connect(mapStateToProps)(OrderForm);

@@ -19,6 +19,7 @@ class PizzaList extends Component {
         }
     handleClick = () => {
         this.props.history.push('/customer-info')
+        this.props.dispatch({ type: 'ORDER_INFO_PIZZAS', payload: this.state })
     }
 
     render() {
