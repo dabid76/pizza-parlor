@@ -1,29 +1,27 @@
 import React, { Component } from 'react';
-import axios from 'axios';
-import './App.css';
 import {connect} from 'react-redux'
 
 class CheckoutTable extends Component {
 
-  componentDidMount = () => {
-    this.getOrders();
-  }
-
-  // this will get all of the info from the database
-  // that we need to display in the render
-  // but this might not be the best place for it 
-  // if we also need to access it in admin
-  getOrders = () => {
-    axios.get('/api/order')
-    .then(response => {
-      console.log(response.data)
-    })
-  }
-
   render() {
+    const pizzas = this.props.reduxStore.orderReducer.pizzaOrder.pizzaToOrder
+    const total = this.props.reduxStore.orderReducer.pizzaOrder.total
     return (
       <div className="App">
-          This is the checout table!
+        <table>
+          <thead>
+            <tr>
+              <td>Name</td>
+              <td>Cost</td>
+            </tr>
+          </thead>
+          <tbody>
+            {/* {pizzas.map(pizza => {
+              return <tr><td>{pizza.name}</td><td>{pizza.price}</td></tr>
+            })} */}
+          </tbody>
+          <h2>{total}</h2>
+        </table>
       </div>
     );
   }

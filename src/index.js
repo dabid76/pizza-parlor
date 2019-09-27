@@ -7,7 +7,10 @@ import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 
 let order = {
-    pizzaOrder: {},
+    pizzaOrder: {
+        pizzaToOrder: '',
+        total: 0
+    },
     customerInfo: []
 }
 
@@ -15,10 +18,7 @@ const pizzaReducer = (state = [], action) => {
     if (action.type === 'LIST_PIZZAS') {
         console.log('payload', action.payload)
         return action.payload
-    } else if (action.type === 'ADD_TOTAL') {
-        console.log('payload', action.payload)
-        return action.payload
-    }
+    } 
     return state;
 }
 
@@ -27,13 +27,25 @@ const orderReducer = (state = order, action) => {
         console.log('payload', action.payload)
         return {
             ...state,
-            pizzas: action.payload
+            pizzaOrder: {
+                ...state.pizzaOrder,
+                pizzaToOrder: action.payload.pizzaToOrder
+            }
         }
     } else if (action.type === 'ORDER_INFO_CUSTOMER') {
         console.log('payload', action.payload)
         return {
             ...state,
             customerInfo: action.payload
+        }
+    } else if (action.type === 'UPDATE_TOTAL') {
+        console.log('payload', action.payload)
+        return {
+            ...state,
+            pizzaOrder: {
+                ...state.pizzaToOrder,
+                total: action.payload
+            }
         }
     }
     return state;

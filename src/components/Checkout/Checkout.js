@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import CheckoutTable from '../CheckoutTable/CheckoutTable'
 
 class Checkout extends Component {
 
     render() {
         return (
             <>
-            {/* In /checkout, 
-            This component will include CheckoutTable and UserInfo */}
+                <CheckoutTable />
             </>
         );
     }
