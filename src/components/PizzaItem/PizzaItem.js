@@ -6,7 +6,9 @@ class PizzaItem extends Component {
     addProductToCart = () => {
         console.log('btn getting click')
         console.log(this.props.product);
-        this.props.dispatch({ type: 'ADD_ORDER', payload: this.props.product })        
+        this.props.dispatch({ type: 'ADD_ORDER', payload: this.props.product })
+        
+        this.props.updateTotal(this.props.pizza.price)
     }
 
     render() {
@@ -21,7 +23,7 @@ class PizzaItem extends Component {
                     <br></br>
                         <div className="pizza-price">{this.props.pizza.price}</div>
                     </div>
-                    <button class="button" onClick={(event) => this.props.addProductToCart}>Add to Cart</button>
+                    <button class="button" onClick={(event) => this.addProductToCart()}>Add to Cart</button>
             </div>
             </>
         )

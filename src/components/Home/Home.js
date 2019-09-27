@@ -14,8 +14,7 @@ class App extends Component {
         return (
             <div className="App">
                 {/* Displays the current order total */}
-                <PizzaList />
-                <button onClick={this.handleClick} className="nextBtn">NEXT</button>
+                <PizzaList handleClick={this.handleClick}/>
             </div>
         );
     }
