@@ -12,10 +12,16 @@ class PizzaList extends Component {
 
     addProductToCart = (pizza) => {
         console.log('btn getting click for:', pizza)
-        this.setState({
-            ...this.state,
-            pizzaToOrder:[...this.state.pizzaToOrder, pizza]
+        this.setState({...this.state,
+            pizzaToOrder: [...this.state.pizzaToOrder, {
+                id: pizza.id,
+                name: pizza.name,
+                description: pizza.description,
+                price: pizza.price,
+                image_path: pizza.image_path
+                }]
         })
+        console.log('this is the pizza in the state:', this.state)
 
         this.updateTotal(pizza.price);
     }
