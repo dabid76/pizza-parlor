@@ -47,6 +47,14 @@ const orderReducer = (state = order, action) => {
                 total: action.payload
             }
         }
+    } else if (action.type === 'DELETE_PRODUCT') {
+        let index = state.pizzaToOrder.indexOf(action.payload);
+        let newList = state.pizzaToOrder
+        newList.splice(index, 1)
+        return {
+            ...state,
+            pizzaToOrder: newList
+        }
     }
     return state;
 }

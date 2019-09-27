@@ -24,8 +24,10 @@ class PizzaList extends Component {
         console.log('state!', this.state)
     }
 
-    removeProductFromCart = (pizza) => {
+    removeProductFromCart = (pizzaItem) => {
         console.log('removing product from cart');
+        this.props.dispatch({ type: 'DELETE_PRODUCT', payload: pizzaItem })
+
     }
 
 
