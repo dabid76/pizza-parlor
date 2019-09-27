@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import CheckoutTable from '../CheckoutTable/CheckoutTable'
 import UserInfo from '../UserInfo/UserInfo';
-// import axios from 'axios'
+import axios from 'axios'
 
 class Checkout extends Component {
 
@@ -25,13 +25,13 @@ class Checkout extends Component {
             pizzas: pizzas
         }
         console.log(orderToSend)
-        // axios.post('/api/order', orderToSend)
-        //     .then(response => {
-        //         console.log('posted to order database', orderToSend)
-        //         this.props.history.push('/')
-        //     }).catch(error => {
-        //         console.log('error in posting the order', error)
-        // })
+        axios.post('/api/order', orderToSend)
+            .then(response => {
+                console.log('posted to order database', orderToSend)
+                this.props.history.push('/')
+            }).catch(error => {
+                console.log('error in posting the order', error)
+        })
         
     }
 
