@@ -6,6 +6,10 @@ import UserInfo from '../UserInfo/UserInfo';
 
 class Checkout extends Component {
 
+    checkoutSubmit = () => {
+        this.props.history.push('/');
+      }
+
     render() {
         return (
             <div>
@@ -14,7 +18,7 @@ class Checkout extends Component {
                 <br/>
                 <CheckoutTable/>
                 <br/>
-                <button onClick={this.handleSubmit}>Checkout</button>
+                <button onClick={this.checkoutSubmit}>Checkout</button>
             </div>
         );
     }
