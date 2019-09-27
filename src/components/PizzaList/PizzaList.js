@@ -21,10 +21,16 @@ class PizzaList extends Component {
     }
 
     removeProductFromCart = (pizza) => {
-        console.log('removing product from cart');
-        this.props.dispatch({ type: 'DELETE_PRODUCT', payload: this.state.total })
+        console.log('removing product from cart. State:', this.state);
+        let index = this.state.pizzaToOrder.indexOf(pizza);
+        let newList = this.state.pizzaToOrder
+        newList.splice(index, 1)
+        this.setState({
+            ...this.state,
+            pizzaToOrder: newList
+        })
 
-
+        console.log('newlist', newList)
     }
 
 
