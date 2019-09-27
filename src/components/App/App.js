@@ -33,10 +33,6 @@ class App extends Component {
           <h1 className="App-title">Prime Pizza</h1>
         </header>
         <br/>
-<<<<<<< HEAD
-        <Admin/>
-      <PizzaList/>
-=======
         <ul class="main-nav">
             <li class="main-nav-li">
               <Link to="/">Home</Link>
@@ -52,7 +48,6 @@ class App extends Component {
         <Route path="/customer-info" component={OrderForm}/>
         <Route path="/checkout" component={Checkout}/>
       {/* <PizzaList/> */}
->>>>>>> master
       </div>
       </Router>
     );
