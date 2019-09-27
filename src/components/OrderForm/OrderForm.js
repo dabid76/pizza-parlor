@@ -10,7 +10,7 @@ class OrderForm extends Component {
             street_address: '',
             city: '',
             zip: '',
-            type: ''
+            type: 'Delivery'
         }
     }
 
