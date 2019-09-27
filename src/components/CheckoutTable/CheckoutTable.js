@@ -20,8 +20,8 @@ class CheckoutTable extends Component {
               return <tr><td>{pizza.name}</td><td>{pizza.price}</td></tr>
             })} */}
           </tbody>
-          <h2>{total}</h2>
         </table>
+        <h2>{total}</h2>
       </div>
     );
   }
