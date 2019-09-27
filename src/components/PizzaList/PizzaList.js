@@ -11,12 +11,28 @@ class PizzaList extends Component {
         total: 0
     }
 
+    addProductToCart = (pizza) => {
+        console.log('btn getting click for:', pizza)
+        this.setState({...this.state,
+        pizzaToOrder:[...this.state.pizzaToOrder, pizza]})
+    
+        // this.props.dispatch({ type: 'ADD_ORDER', payload: this.props.pizza })
+
+        this.updateTotal(pizza.price);
+    }
+
+    removeProductFromCart = (pizza) => {
+        console.log('removing product from cart');
+    }
+
+
     updateTotal = (price) => {
         console.log('this is the price:', price, 'this is the state:', this.state.total)
         this.setState ({...this.state,
             total: parseFloat(this.state.total) + parseFloat(price)
             })
         }
+
     handleClick = () => {
         this.props.history.push('/customer-info')
         this.props.dispatch({ type: 'ORDER_INFO_PIZZAS', payload: this.state })
@@ -27,10 +43,12 @@ class PizzaList extends Component {
             <>
             <div className="pizza-list">
                 {this.props.reduxStore.pizzaReducer.map((pizzaItem) => 
-                    <PizzaItem pizza={pizzaItem} updateTotal={this.updateTotal}/>
+                    <PizzaItem pizza={pizzaItem} updateTotal={this.updateTotal} addProductToCart={this.addProductToCart}
+                    removeProductFromCart={this.removeProductFromCart}
+                    toggleOn={this.state.toggleOn}/>
                 )}
             </div>
-            <button onClick={this.handleClick} className="nextBtn">NEXT</button>
+            <button onClick={this.handleClick} className="nextBtn" pizza={this.state}>NEXT</button>
             </>
         );
     }
