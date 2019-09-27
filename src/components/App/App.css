@@ -10,11 +10,35 @@
 
 .pizza-item {
   display: flex;
-  width: 250px;
+  width: 150px;
   flex-direction: column;
   border: 2px solid black;
-  padding: 5px;
   margin-top: 10px;
+  background-color: lightblue;
+  text-align: left;
+}
+
+.pizza-info {
+  padding: 5px;
+}
+
+.pizza-description {
+  height: 300px;
+}
+
+.pizza-price {
+  text-align: right;
+  padding: 10px;
+}
+
+.nextBtn {
+  width: 100px;
+  height: 50px;
+  padding: 5px;
+  margin: 10px;
+  float: right;
+  background-color: lightblue;
+  border-radius: 10px;
 }
 
 .App-header {
