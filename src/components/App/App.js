@@ -31,10 +31,9 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">Prime Pizza</h1>
-          Order Total: ${this.props.reduxState.orderReducer.pizzaOrder.total}
         </header>
         <br/>
-        <ul className="main-nav">
+        {/* <ul className="main-nav">
             <li className="main-nav-li">
               <Link to="/">Home</Link>
             </li>
@@ -44,7 +43,7 @@ class App extends Component {
             <li className="main-nav-li">
               <Link to="/checkout">Checkout</Link>
             </li>
-          </ul>
+          </ul> */}
         <Route path="/" exact component={PizzaList} />
         <Route path="/customer-info" component={OrderForm}/>
         <Route path="/checkout" component={Checkout}/>

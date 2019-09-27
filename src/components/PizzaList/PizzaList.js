@@ -11,16 +11,8 @@ class PizzaList extends Component {
     }
 
     addProductToCart = (pizza) => {
-        console.log('btn getting click for:', pizza)
-        this.setState({...this.state,
-            pizzaToOrder: [...this.state.pizzaToOrder, {
-                id: pizza.id,
-                name: pizza.name,
-                description: pizza.description,
-                price: pizza.price,
-                image_path: pizza.image_path
-                }]
-        })
+        console.log('btn getting click for:', pizza);
+        this.state.pizzaToOrder.push(pizza);
         console.log('this is the pizza in the state:', this.state)
 
         this.updateTotal(pizza.price);
@@ -33,7 +25,8 @@ class PizzaList extends Component {
         newList.splice(index, 1)
         this.setState({
             ...this.state,
-            pizzaToOrder: newList
+            pizzaToOrder: newList,
+            total: parseFloat(this.state.total) - parseFloat(pizza.price)
         })
 
         console.log('newlist', newList)
@@ -56,6 +49,7 @@ class PizzaList extends Component {
     render() {
         return (
             <>
+            Order Total: ${this.state.total}
             <div className="pizza-list">
                 {this.props.reduxStore.pizzaReducer.map((pizzaItem) => 
                     <PizzaItem pizza={pizzaItem} updateTotal={this.updateTotal} addProductToCart={this.addProductToCart}
