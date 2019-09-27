@@ -4,21 +4,23 @@ import {connect} from 'react-redux'
 
 class UserInfo extends Component {
 
-    componentDidMount = () => {
-        console.log("UserInfo loaded");
-    }
-
     render() {
-        const customerInformation = this.props.reduxState.orderReducer.customerInfo;
+        const customerInformation = this.props.reduxStore.orderReducer.customerInfo;
         return (
             <div className="userInfo">
-            {customerInformation}
+            Name: {customerInformation.customer_name}<br/>
+            Address:<br/>
+            {customerInformation.street_address}<br/>
+            {customerInformation.city} {customerInformation.zip}
+            <p>
+                Delivery/Pickup: {customerInformation.type}
+            </p>
             </div>
         );
     }
 }
 
-const mapStateToProps = (reduxState) => ({
-    reduxState
+const mapStateToProps = (reduxStore) => ({
+    reduxStore
 })
 export default connect(mapStateToProps)(UserInfo);
