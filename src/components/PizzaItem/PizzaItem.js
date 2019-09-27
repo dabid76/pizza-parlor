@@ -4,6 +4,12 @@ import {connect} from 'react-redux'
 class PizzaItem extends Component {
 
 
+    addProductToCart = () => {
+        console.log('btn getting click')
+        console.log(this.props.product);
+        this.props.dispatch({ type: 'ADD_ORDER', payload: this.props.product })        
+    }
+
     render() {
         return (
             <>

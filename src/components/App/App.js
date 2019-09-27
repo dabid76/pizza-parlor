@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
-import { connect } from 'react-redux';
-import { HashRouter as Router, Route, Link } from 'react-router-dom';
-import PizzaList from '../PizzaList/PizzaList';
+import {HashRouter as Router, Route, Link} from 'react-router-dom';
 import Home from '../Home/Home.js';
+import { connect } from 'react-redux';
+import PizzaList from '../PizzaList/PizzaList';
 import OrderForm from '../OrderForm/OrderForm';
 // import Checkout from '../Checkout/Checkout';
+// import PizzaItem from '../PizzaItem/PizzaItem';
+import Checkout from '../Checkout/Checkout';
 // import CheckoutTable from '../CheckoutTable/CheckoutTable';
 // import UserInfo from '../UserInfo/UserInfo';
 
@@ -31,8 +33,20 @@ class App extends Component {
           <h1 className="App-title">Prime Pizza</h1>
         </header>
         <br/>
-      <Route path="/" exact component={Home} />
-      <Route path="/order" component={OrderForm} />
+        <ul class="main-nav">
+            <li class="main-nav-li">
+              <Link to="/">Home</Link>
+            </li>
+            <li class="main-nav-li">
+              <Link to="/customer-info">Order Form</Link>
+            </li>
+            <li class="main-nav-li">
+              <Link to="/checkout">Checkout</Link>
+            </li>
+          </ul>
+        <Route path="/" exact component={Home} />
+        <Route path="/customer-info" component={OrderForm}/>
+        <Route path="/checkout" component={Checkout}/>
       </div>
       </Router>
     );
