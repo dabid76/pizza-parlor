@@ -17,6 +17,9 @@ class PizzaList extends Component {
             total: parseFloat(this.state.total) + parseFloat(price)
             })
         }
+    handleClick = () => {
+        this.props.history.push('/customer-info')
+    }
 
     render() {
         return (
@@ -26,7 +29,7 @@ class PizzaList extends Component {
                     <PizzaItem pizza={pizzaItem} updateTotal={this.updateTotal}/>
                 )}
             </div>
-            <button onClick={this.props.handleClick} className="nextBtn">NEXT</button>
+            <button onClick={this.handleClick} className="nextBtn">NEXT</button>
             </>
         );
     }

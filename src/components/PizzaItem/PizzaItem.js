@@ -23,7 +23,7 @@ class PizzaItem extends Component {
                     <br></br>
                         <div className="pizza-price">{this.props.pizza.price}</div>
                     </div>
-                    <button class="button" onClick={(event) => this.addProductToCart()}>Add to Cart</button>
+                    <button className="button" onClick={(event) => this.addProductToCart()}>Add to Cart</button>
             </div>
             </>
         )
