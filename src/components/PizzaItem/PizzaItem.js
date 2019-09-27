@@ -39,8 +39,8 @@ class PizzaItem extends Component {
                         <div className="pizza-price">{this.props.pizza.price}</div>
                     </div>
                     { this.state.toggleOn ?
-                        <button class="button" onClick={(event) => this.toggleState()}>Add to Cart</button>
-                        : <button class="button" onClick={(event) => this.toggleState()}>Remove</button> }
+                        <button className="button" onClick={(event) => this.toggleState()}>Add to Cart</button>
+                        : <button className="button" onClick={(event) => this.toggleState()}>Remove</button> }
 
             </div>
             </>

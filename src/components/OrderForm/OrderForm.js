@@ -42,6 +42,7 @@ class OrderForm extends Component {
 
     handleSubmit = () => {
         console.log(this.state)
+        this.props.history.push('/checkout')
         this.props.dispatch({ type: 'ORDER_INFO_CUSTOMER', payload: this.state.orderToSend })
     }
 
@@ -60,8 +61,8 @@ class OrderForm extends Component {
                         <input type="radio" name="pizza" value="Pickup" onChange={(event) => this.handleInputChange(event, 'type')} />Pickup<br/>
                         <input type="radio" name="pizza" value="Delivery" onChange={(event) => this.handleInputChange(event, 'type')} defaultChecked/>Delivery
                     </form>
-                    <button onClick={this.handleSubmit}>Placeholder Submit</button>
                 </div>
+            <button onClick={this.handleSubmit} className="nextBtn">NEXT</button>
             </>
         );
     }
