@@ -47,7 +47,7 @@ const orderReducer = (state = order, action) => {
                 total: action.payload
             }
         }
-    }
+    } 
     return state;
 }
 
