@@ -31,6 +31,7 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">Prime Pizza</h1>
+          Order Total: ${this.props.reduxState.orderReducer.pizzaOrder.total}
         </header>
         <br/>
         <ul className="main-nav">
@@ -54,4 +55,7 @@ class App extends Component {
   }
 }
 
-export default connect()(App);
+const StateToProps = (reduxState) => ({
+  reduxState
+})
+export default connect(StateToProps)(App);
