@@ -48,6 +48,7 @@ class App extends Component {
         <Route path="/" exact component={Home} />
         <Route path="/customer-info" component={OrderForm}/>
         <Route path="/checkout" component={Checkout}/>
+        <Route path="/admin" component={Admin} />
       </div>
       </Router>
     );
