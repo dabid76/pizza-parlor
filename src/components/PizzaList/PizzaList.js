@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import { connect } from 'react-redux';
 import PizzaItem from '../PizzaItem/PizzaItem'
 import '../App/App.css'
@@ -17,11 +16,8 @@ class PizzaList extends Component {
             ...this.state,
             pizzaToOrder:[...this.state.pizzaToOrder, pizza]
         })
-    
-        this.props.dispatch({ type: 'UPDATE_TOTAL', payload: this.state.total })
 
         this.updateTotal(pizza.price);
-        console.log('state!', this.state)
     }
 
     removeProductFromCart = (pizza) => {
@@ -31,10 +27,11 @@ class PizzaList extends Component {
 
     updateTotal = (price) => {
         console.log('this is the price:', price, 'this is the state:', this.state.total)
-        this.setState ({...this.state,
+        this.setState({...this.state,
             total: parseFloat(this.state.total) + parseFloat(price)
-            })
-        }
+        })
+        return this.props.dispatch({ type: 'UPDATE_TOTAL', payload: this.state.total })
+    }
 
     handleClick = () => {
         this.props.history.push('/customer-info')
