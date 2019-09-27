@@ -8,7 +8,7 @@ import logger from 'redux-logger';
 
 let order = {
     pizzaOrder: {
-        pizzaToOrder: '',
+        pizzaToOrder: [],
         total: 0
     },
     customerInfo: []
