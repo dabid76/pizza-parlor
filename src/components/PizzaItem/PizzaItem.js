@@ -3,14 +3,6 @@ import {connect} from 'react-redux'
 
 class PizzaItem extends Component {
 
-    state = {
-        pizzaToOrder: {
-            name = '',
-            description = '',
-            price = ''
-        },
-    }
-
     addProductToCart = () => {
         console.log('btn getting click')
         console.log(this.props.product);

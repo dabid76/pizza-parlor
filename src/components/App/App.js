@@ -10,6 +10,7 @@ import OrderForm from '../OrderForm/OrderForm';
 import Checkout from '../Checkout/Checkout';
 // import CheckoutTable from '../CheckoutTable/CheckoutTable';
 // import UserInfo from '../UserInfo/UserInfo';
+import Admin from '../Admin/Admin'
 
 class App extends Component {
 
@@ -32,6 +33,10 @@ class App extends Component {
           <h1 className="App-title">Prime Pizza</h1>
         </header>
         <br/>
+<<<<<<< HEAD
+        <Admin/>
+      <PizzaList/>
+=======
         <ul class="main-nav">
             <li class="main-nav-li">
               <Link to="/">Home</Link>
@@ -47,6 +52,7 @@ class App extends Component {
         <Route path="/customer-info" component={OrderForm}/>
         <Route path="/checkout" component={Checkout}/>
       {/* <PizzaList/> */}
+>>>>>>> master
       </div>
       </Router>
     );

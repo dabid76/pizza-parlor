@@ -5,6 +5,15 @@ import PizzaItem from '../PizzaItem/PizzaItem'
 import '../App/App.css'
 
 class PizzaList extends Component {
+
+    state = {
+        pizzaToOrder: {
+            name: '',
+            description: '',
+            price: ''
+        },
+    }
+
     render() {
         return (
             <>
