@@ -2,13 +2,23 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux'
 
 class PizzaItem extends Component {
+
   
     addProductToCart = () => {
         console.log('btn getting click')
-        console.log(this.props.product);
-        this.props.dispatch({ type: 'ADD_ORDER', payload: this.props.product })
+        // console.log(this.props.product);
+        this.setState({
+            isToggleOn: !this.state.isToggleOn
+        })
+        this.props.dispatch({ type: 'ADD_ORDER', payload: this.props.product })        
+        // console.log(this.props.product);
         
         this.props.updateTotal(this.props.pizza.price)
+    }
+
+    constructor(props) {
+        super(props);
+        this.state = {isToggleOn: true};
     }
 
     render() {
@@ -23,7 +33,10 @@ class PizzaItem extends Component {
                     <br></br>
                         <div className="pizza-price">{this.props.pizza.price}</div>
                     </div>
-                    <button className="button" onClick={(event) => this.addProductToCart()}>Add to Cart</button>
+                    { this.state.isToggleOn ?
+                    <button class="button" onClick={(event) => this.addProductToCart()}>Add to Cart</button>
+                    :<button class = "button" onClick={(event) => this.props.updateTotal()}>Remove</button> }
+
             </div>
             </>
         )
