@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
 import {HashRouter as Router, Route, Link} from 'react-router-dom';
-import Home from '../Home/Home.js';
 import { connect } from 'react-redux';
 import PizzaList from '../PizzaList/PizzaList';
 import OrderForm from '../OrderForm/OrderForm';
@@ -34,18 +33,18 @@ class App extends Component {
           <h1 className="App-title">Prime Pizza</h1>
         </header>
         <br/>
-        <ul class="main-nav">
-            <li class="main-nav-li">
+        <ul className="main-nav">
+            <li className="main-nav-li">
               <Link to="/">Home</Link>
             </li>
-            <li class="main-nav-li">
+            <li className="main-nav-li">
               <Link to="/customer-info">Order Form</Link>
             </li>
-            <li class="main-nav-li">
+            <li className="main-nav-li">
               <Link to="/checkout">Checkout</Link>
             </li>
           </ul>
-        <Route path="/" exact component={Home} />
+        <Route path="/" exact component={PizzaList} />
         <Route path="/customer-info" component={OrderForm}/>
         <Route path="/checkout" component={Checkout}/>
         <Route path="/admin" component={Admin} />
