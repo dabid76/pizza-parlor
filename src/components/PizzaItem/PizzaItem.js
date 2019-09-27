@@ -11,6 +11,9 @@ class PizzaItem extends Component {
             isToggleOn: !this.state.isToggleOn
         })
         this.props.dispatch({ type: 'ADD_ORDER', payload: this.props.product })        
+        // console.log(this.props.product);
+        
+        this.props.updateTotal(this.props.pizza.price)
     }
 
     constructor(props) {
@@ -32,7 +35,7 @@ class PizzaItem extends Component {
                     </div>
                     { this.state.isToggleOn ?
                     <button class="button" onClick={(event) => this.addProductToCart()}>Add to Cart</button>
-                    :<button class = "button" onClick={(event) => this.addProductToCart()}>Remove</button> }
+                    :<button class = "button" onClick={(event) => this.props.updateTotal()}>Remove</button> }
 
             </div>
             </>
