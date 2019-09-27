@@ -14,6 +14,13 @@ const pizzaReducer = (state = [], action) => {
     return state;
 }
 
+const totalReducer = (state= 0, action) => {
+    if (action.type === 'ADD_TOTAL') {
+        return action.payload
+    }
+    return state;
+}
+
 const orderReducer = (state = [], action) => {
     // if (action.type === 'ADD_ORDER') {
     //     return action.payload
@@ -32,7 +39,8 @@ const reduxStore = createStore(
     combineReducers({
         pizzaReducer,
         orderReducer,
-        lineItemReducer
+        lineItemReducer,
+        totalReducer
     }),
     applyMiddleware(logger)
 );

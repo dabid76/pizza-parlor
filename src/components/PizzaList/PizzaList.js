@@ -12,10 +12,10 @@ class PizzaList extends Component {
     }
 
     updateTotal = (price) => {
-        console.log('this is the price:', price, 'this is the state:', this.state.total)
         this.setState ({...this.state,
             total: parseFloat(this.state.total) + parseFloat(price)
             })
+        this.props.dispatch({ type: 'ADD_TOTAL', payload: this.state.total})
         }
 
     render() {

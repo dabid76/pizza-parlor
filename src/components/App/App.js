@@ -4,10 +4,8 @@ import './App.css';
 import {HashRouter as Router, Route, Link} from 'react-router-dom';
 import Home from '../Home/Home.js';
 import { connect } from 'react-redux';
-import PizzaList from '../PizzaList/PizzaList';
 import OrderForm from '../OrderForm/OrderForm';
 // import Checkout from '../Checkout/Checkout';
-// import PizzaItem from '../PizzaItem/PizzaItem';
 import Checkout from '../Checkout/Checkout';
 // import CheckoutTable from '../CheckoutTable/CheckoutTable';
 // import UserInfo from '../UserInfo/UserInfo';
@@ -32,6 +30,8 @@ class App extends Component {
       <div className="App">
         <header className="App-header">
           <h1 className="App-title">Prime Pizza</h1>
+            <div className="show-total">
+              Order Total: $ {this.props.reduxStore.totalReducer}</div>
         </header>
         <br/>
         <ul class="main-nav">
@@ -55,4 +55,7 @@ class App extends Component {
   }
 }
 
-export default connect()(App);
+const mapStateToProps = (reduxStore) => ({
+  reduxStore
+})
+export default connect(mapStateToProps)(App);
