@@ -3,12 +3,17 @@ import {connect} from 'react-redux'
 // import axios from 'axios';
 
 class UserInfo extends Component {
+
+    componentDidMount = () => {
+        console.log("UserInfo loaded");
+    }
+
     render() {
-        // const = this.props.reduxState
+        const customerInformation = this.props.reduxState.orderReducer.customerInfo;
         return (
-            <>
-            User Info (name, address, city, zip)
-            </>
+            <div className="userInfo">
+            {customerInformation}
+            </div>
         );
     }
 }
