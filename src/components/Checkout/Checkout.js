@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import CheckoutTable from '../CheckoutTable/CheckoutTable'
 import UserInfo from '../UserInfo/UserInfo';
-import CheckoutTable from '../CheckoutTable/CheckoutTable';
 // import axios from 'axios'
 
 class Checkout extends Component {
