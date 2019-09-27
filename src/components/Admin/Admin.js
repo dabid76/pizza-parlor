@@ -6,7 +6,9 @@ class Checkout extends Component {
     state = {
         adminOrders: []
     }
-
+    componentDidMount = () => {
+        this.getOrders();
+    }
     getOrders = () => {
         axios.get('/api/order')
             .then(response => {
@@ -36,7 +38,7 @@ class Checkout extends Component {
                                 <td>{order.customer_name}</td>
                                 <td>{order.time}</td>
                                 <td>{order.type}</td>
-                                <td>{order.cost}</td>
+                                <td>{order.total}</td>
                             </tr>
                             )
                         )}
