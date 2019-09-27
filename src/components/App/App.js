@@ -5,8 +5,9 @@ import {HashRouter as Router, Route, Link} from 'react-router-dom';
 import Home from '../Home/Home.js';
 import { connect } from 'react-redux';
 import PizzaList from '../PizzaList/PizzaList';
-// import PizzaItem from '../PizzaItem/PizzaItem';
 import OrderForm from '../OrderForm/OrderForm';
+// import Checkout from '../Checkout/Checkout';
+// import PizzaItem from '../PizzaItem/PizzaItem';
 import Checkout from '../Checkout/Checkout';
 // import CheckoutTable from '../CheckoutTable/CheckoutTable';
 // import UserInfo from '../UserInfo/UserInfo';
@@ -33,10 +34,6 @@ class App extends Component {
           <h1 className="App-title">Prime Pizza</h1>
         </header>
         <br/>
-<<<<<<< HEAD
-        <Admin/>
-      <PizzaList/>
-=======
         <ul class="main-nav">
             <li class="main-nav-li">
               <Link to="/">Home</Link>
@@ -48,11 +45,9 @@ class App extends Component {
               <Link to="/checkout">Checkout</Link>
             </li>
           </ul>
-        <Route path="/" exact component={PizzaList}/>
+        <Route path="/" exact component={Home} />
         <Route path="/customer-info" component={OrderForm}/>
         <Route path="/checkout" component={Checkout}/>
-      {/* <PizzaList/> */}
->>>>>>> master
       </div>
       </Router>
     );
