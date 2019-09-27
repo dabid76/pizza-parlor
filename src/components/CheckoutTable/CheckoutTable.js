@@ -16,9 +16,9 @@ class CheckoutTable extends Component {
             </tr>
           </thead>
           <tbody>
-            {/* {pizzas.map(pizza => {
+            {pizzas.map(pizza => {
               return <tr><td>{pizza.name}</td><td>{pizza.price}</td></tr>
-            })} */}
+            })}
           </tbody>
         </table>
         <h2>{total}</h2>

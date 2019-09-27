@@ -8,14 +8,14 @@ class PizzaItem extends Component {
     }
 
     toggleState = () => {
-        if (this.state.toggleOn == true){
+        if (this.state.toggleOn === true){
             this.props.addProductToCart(this.props.pizza);
             this.setState({
                 ...this.state,
                 toggleOn: !this.state.toggleOn
             })
         }
-        else if (this.state.toggleOn == false){
+        else if (this.state.toggleOn === false){
             this.props.removeProductFromCart(this.props.pizza);
             this.setState({
                 ...this.state,

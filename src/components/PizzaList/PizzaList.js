@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 import { connect } from 'react-redux';
 import PizzaItem from '../PizzaItem/PizzaItem'
 import '../App/App.css'
