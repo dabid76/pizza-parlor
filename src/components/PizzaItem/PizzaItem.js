@@ -2,8 +2,7 @@ import React, { Component } from 'react';
 import {connect} from 'react-redux'
 
 class PizzaItem extends Component {
-
-
+  
     addProductToCart = () => {
         console.log('btn getting click')
         console.log(this.props.product);

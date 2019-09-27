@@ -11,6 +11,7 @@ import OrderForm from '../OrderForm/OrderForm';
 import Checkout from '../Checkout/Checkout';
 // import CheckoutTable from '../CheckoutTable/CheckoutTable';
 // import UserInfo from '../UserInfo/UserInfo';
+import Admin from '../Admin/Admin'
 
 class App extends Component {
 
