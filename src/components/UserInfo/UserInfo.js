@@ -4,15 +4,16 @@ import {connect} from 'react-redux'
 
 class UserInfo extends Component {
     render() {
+        // const = this.props.reduxState
         return (
             <>
-            User Info
+            User Info (name, address, city, zip)
             </>
         );
     }
 }
 
-const mapStateToProps = (reduxStore) => ({
-    reduxStore
+const mapStateToProps = (reduxState) => ({
+    reduxState
 })
 export default connect(mapStateToProps)(UserInfo);

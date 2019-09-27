@@ -23,7 +23,12 @@ class CheckoutTable extends Component {
   render() {
     return (
       <div className="App">
-          This is the checkout table!
+          <table>
+            <tr>
+              <th>Name of Pizza</th>
+              <th>Cost</th>
+            </tr>
+          </table>
       </div>
     );
   }
