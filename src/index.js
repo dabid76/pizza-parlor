@@ -28,7 +28,7 @@ const orderReducer = (state = order, action) => {
         return {
             ...state,
             pizzaOrder: {
-                total: action.payload.total,
+                ...state.pizzaOrder,
                 pizzaToOrder: action.payload.pizzaToOrder
             }
         }
