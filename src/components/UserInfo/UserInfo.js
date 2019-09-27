@@ -1,13 +1,18 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+import {connect} from 'react-redux'
+// import axios from 'axios';
 
 class UserInfo extends Component {
     render() {
         return (
             <>
+            User Info
             </>
         );
     }
 }
 
-export default UserInfo;
+const mapStateToProps = (reduxStore) => ({
+    reduxStore
+})
+export default connect(mapStateToProps)(UserInfo);

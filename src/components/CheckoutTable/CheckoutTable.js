@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import './App.css';
+// import './App.css';
 import {connect} from 'react-redux'
 
 class CheckoutTable extends Component {
@@ -23,7 +23,7 @@ class CheckoutTable extends Component {
   render() {
     return (
       <div className="App">
-          This is the checout table!
+          This is the checkout table!
       </div>
     );
   }
