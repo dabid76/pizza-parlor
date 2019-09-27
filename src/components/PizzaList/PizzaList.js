@@ -13,9 +13,10 @@ class PizzaList extends Component {
 
     addProductToCart = (pizza) => {
         console.log('btn getting click for:', pizza)
-        // this.setState
-        this.props.dispatch({ type: 'ADD_ORDER', payload: this.props.pizza })
-        // console.log(this.props.product);
+        this.setState({...this.state,
+        pizzaToOrder:[...this.state.pizzaToOrder, pizza]})
+    
+        // this.props.dispatch({ type: 'ADD_ORDER', payload: this.props.pizza })
 
         this.updateTotal(pizza.price);
     }
