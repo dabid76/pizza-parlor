@@ -20,9 +20,10 @@ class PizzaList extends Component {
         this.updateTotal(pizza.price);
     }
 
-    removeProductFromCart = (pizzaItem) => {
+    removeProductFromCart = (pizza) => {
         console.log('removing product from cart');
-        this.props.dispatch({ type: 'DELETE_PRODUCT', payload: pizzaItem })
+        this.props.dispatch({ type: 'DELETE_PRODUCT', payload: this.state.total })
+
 
     }
 
