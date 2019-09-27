@@ -18,10 +18,7 @@ const pizzaReducer = (state = [], action) => {
     if (action.type === 'LIST_PIZZAS') {
         console.log('payload', action.payload)
         return action.payload
-    } else if (action.type === 'ADD_TOTAL') {
-        console.log('payload', action.payload)
-        return action.payload
-    }
+    } 
     return state;
 }
 
@@ -31,8 +28,8 @@ const orderReducer = (state = order, action) => {
         return {
             ...state,
             pizzaOrder: {
-                pizzaToOrder: action.payload.pizzaToOrder,
-                total: action.payload.total
+                ...state.pizzaOrder,
+                pizzaToOrder: action.payload.pizzaToOrder
             }
         }
     } else if (action.type === 'ORDER_INFO_CUSTOMER') {
@@ -40,6 +37,15 @@ const orderReducer = (state = order, action) => {
         return {
             ...state,
             customerInfo: action.payload
+        }
+    } else if (action.type === 'UPDATE_TOTAL') {
+        console.log('payload', action.payload)
+        return {
+            ...state,
+            pizzaOrder: {
+                ...state.pizzaToOrder,
+                total: action.payload
+            }
         }
     }
     return state;
